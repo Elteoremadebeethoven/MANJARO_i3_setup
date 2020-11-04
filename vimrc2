@@ -1,0 +1,204 @@
+syntax on
+filetype plugin indent on
+
+set guicursor=
+set relativenumber
+set nohlsearch
+set hidden
+set noerrorbells
+set tabstop=4 softtabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set nu
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set termguicolors
+set scrolloff=8
+set noshowmode
+set completeopt=menuone,noinsert,noselect
+set signcolumn=yes
+set list
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=50
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+"set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+call plug#begin('~/.vim/plugged')
+Plug 'ycm-core/YouCompleteMe'
+Plug 'morhetz/gruvbox'
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'leafgarland/typescript-vim'
+Plug 'vim-utils/vim-man'
+Plug 'lyuts/vim-rtags'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mbbill/undotree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'git://git.wincent.com/command-t.git'
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
+
+colorscheme gruvbox
+set background=dark
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let mapleader = " "
+let g:netrw_browse_split=2
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+
+let g:ctrlp_use_caching = 0
+
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <silent> <Leader>+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
+" YCM
+" The best part.
+" nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
+" nnoremap <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+autocmd BufWritePre * :call TrimWhitespace()
+
+let g:airline#extensions#bookmark#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+
+let g:airline#extensions#hunks#enabled=1
+
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = '㏑'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'Ξ'
+"" Ɇ
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+
+let g:airline_extensions = ['tabline','branch']
+"let g:airline_theme = 'solarized'
+
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
+
+
+let g:airline#extensions#branch#enabled = 1
+set listchars=tab:>␣,space:·
+
+let w:longlines = matchadd('ColorColumn', '\%'.&textwidth.'v', &textwidth)
+
+function! <SID>ranger()
+    let l:temp = tempname()
+    execute 'silent !xterm -e ranger --choosefiles='.shellescape(l:temp).' $PWD'
+    if !filereadable(temp)
+        redraw!
+        return
+    endif
+    let l:names = readfile(l:temp)
+    if empty(l:names)
+        redraw!
+        return
+    endif
+    execute 'edit '.fnameescape(l:names[0])
+    for l:name in l:names[1:]
+        execute 'argadd '.fnameescape(l:name)
+    endfor
+    redraw!
+endfunction
+
+command! D Explore
+command! R call <SID>ranger()
+command! Q call <SID>quitbuffer()
+command! -nargs=1 B :call <SID>bufferselect("<args>")
+command! W execute 'silent w !sudo tee % >/dev/null' | edit!
+
+" ------ autocmd ------
+
+
+" when not running in a console or a terminal that doesn't support 256 colors
+" enable cursorline in the currently active window and disable it in inactive ones
+if $DISPLAY !=? '' && &t_Co == 256
+    augroup cursorline
+	autocmd!
+	autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+	autocmd WinLeave * setlocal nocursorline
+    augroup END
+endif
+
+" indentation:
+
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_color_term = 239
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+set list
+
+"Remove underline
+hi CursorLineNr    term=bold cterm=bold ctermfg=012 gui=bold
+
+"let skip_defaults_vim=1
