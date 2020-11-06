@@ -80,6 +80,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'luochen1990/rainbow'
 Plug 'andymass/vim-matchup'
+Plug 'easymotion/vim-easymotion'
 " Plug 'flazz/vim-colorschemes'
 " Plug 'chriskempson/base16-vim'
 " Plug 'AndrewRadev/splitjoin.vim'
@@ -203,8 +204,10 @@ nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
 nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>+ :vertical resize +2<CR>
+nnoremap <Leader>- :vertical resize -2<CR>
+nnoremap <Leader>h+ :resize +2<CR>
+nnoremap <Leader>h- :resize -2<CR>
 nnoremap <Leader>rp :resize 100<CR>
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
 vnoremap J :m '>+1<CR>gv=gv
@@ -458,6 +461,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:html_indent_style1 = "auto"
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType html :RainbowToggleOff
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 let g:python_highlight_all = 1
 set mouse=a
 set clipboard+=unnamedplus
@@ -492,3 +496,17 @@ nmap <silent> gd :call <SID>GoToDefinition()<CR>
 "let g:python_highlight_string_templates = 1
 "let g:python_highlight_operators = 1
 let g:python_highlight_all = 1
+nmap <leader>s <Plug>(easymotion-s2)
+nmap <leader>nt :NERDTreeFind<CR>
+nmap <leader>w :w<CR>
+nmap <leader>q :q<CR>
+nmap <leader>! :q!<CR>
+map <leader>fr 0]%<<V%j<
+map <leader>fs :Files<cr>
+nmap <leader>{ [%
+nmap <leader>} ]%
+:imap ññ <Esc>
+nmap <leader>n :bn<CR>
+nmap <leader>p :bp<CR>
+nmap <leader>r :@:<CR>  
+tnoremap <leader><ESC><ESC>  <C-\><C-n>
