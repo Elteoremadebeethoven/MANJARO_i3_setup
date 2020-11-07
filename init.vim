@@ -674,3 +674,6 @@ set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+
+nmap <leader><leader>l wwciw
+inoremap <c-space>l <Esc>wwciw
