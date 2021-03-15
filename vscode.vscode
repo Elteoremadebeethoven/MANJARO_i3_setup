@@ -1,0 +1,155 @@
+{
+    "workbench.colorTheme": "Gruvbox Minor Dark Hard",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.renderControlCharacters": true,
+    "editor.mouseWheelZoom": true,
+    "editor.renderWhitespace": "all",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "extensions.ignoreRecommendations": false,
+    "terminal.integrated.automationShell.linux": "bash",
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.allowChords": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "workbench.activityBar.visible": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Pylance",
+    "workbench.editorAssociations": [],
+    "launch": {
+    
+
+
+
+
+        "configurations": [],
+        "compounds": []
+    },
+    "editor.tokenColorCustomizations": {
+        "[Monokai]": {
+            "textMateRules": [
+                {
+                    "name": "Class name",
+                    "scope": "entity.name.type.class",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#A6E22E" 
+                    },
+                }
+            ]
+        },
+        "[Gruvbox Minor Dark Hard]": {
+            "textMateRules": [
+                {
+                    "name": "Color simbolos",
+                    "scope": "keyword.operator.comparison.python",
+                    "settings": {
+                        "foreground": "#db0000",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Color simbolos",
+                    "scope": "keyword.operator.assignment.python",
+                    "settings": {
+                        "foreground": "#db0000",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Color simbolos",
+                    "scope": "keyword.operator.assignment.augmented.python",
+                    "settings": {
+                        "foreground": "#db0000",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Color simbolos",
+                    "scope": "meta.item-access.arguments.python",
+                    "settings": {
+                        "foreground": "#db0000",
+                        //"fontStyle": "bold"
+                    }
+                },
+                // {
+                //     "name": "Color simbolos2",
+                //     "scope": "meta.structure.list.item.python",
+                //     "settings": {
+                //         "foreground": "#db0000",
+                //         //fontStyle": "bold"
+                //     }
+                // },
+                {
+                    "name": "Color simbolos3",
+                    "scope": "variable.parameter.function.python",
+                    "settings": {
+                        "foreground": "#ff7c24",
+                        //fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Menos",
+                    "scope": "keyword.operator.arithmetic.python",
+                    "settings": {
+                        "foreground": "#ff6600",
+                        //fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Metodos",
+                    "scope": "meta.function-call.python",
+                    "settings": {
+                        "foreground": "#83a598",
+                        //fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "otros",
+                    "scope": "variable.parameter.function.language.special.self.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "otros2",
+                    "scope": "storage.type.class.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "otros3",
+                    "scope": "storage.type.function.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "otros4",
+                    "scope": "keyword.control.flow.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "otros3",
+                    "scope": "storage.type.function.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "otros3",
+                    "scope": "keyword.operator.logical.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+            ]
+        }
+    },
+    "editor.tabCompletion": "on",
+    "editor.suggest.showStatusBar": true,
+    "svg.preview.mode": "svg"
+}
