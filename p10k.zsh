@@ -433,7 +433,7 @@
     # Tip: To always display the current Git commit, delete the next line.
     #[[ -z $VCS_STATUS_LOCAL_BRANCH && -z $VCS_STATUS_TAG ]] &&  # <-- this line
       #res+="${meta}@${clean}${VCS_STATUS_COMMIT[1,8]}"
-    typeset -g SPACESHIP_GIT_COMMIT_PREFIX='\u22B6 '
+    typeset -g SPACESHIP_GIT_COMMIT_PREFIX='\u07E6 '
     if [[ -n ${VCS_STATUS_COMMIT} ]]; then
      res+=" ${(g::)SPACESHIP_GIT_COMMIT_PREFIX}${clean}${VCS_STATUS_COMMIT[1,8]}"
     fi
