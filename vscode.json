@@ -1,0 +1,166 @@
+{
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "[python]": {
+        "editor.semanticHighlighting.enabled": true
+    },
+    "workbench.colorTheme": "Gruvbox Minor Dark Hard",
+    "editor.suggestSelection": "first",
+    "editor.renderWhitespace": "all", 
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Pylance",
+    "terminal.integrated.rendererType": "dom",
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 15,
+    "workbench.activityBar.visible": false,
+    "editor.fontSize": 18,
+    "latex-workshop.message.update.show": false,
+    "window.zoomLevel": 1,
+    "terminal.integrated.inheritEnv": false,
+    "editor.tokenColorCustomizations": {
+        "[Gruvbox Minor Dark Hard]": {
+            "textMateRules": [
+                {
+                    "name": "Change colors comparison",
+                    "scope": "keyword.operator.comparison.python",
+                    "settings": {
+                        "foreground": "#db0000",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors assignment",
+                    "scope": "keyword.operator.assignment.python",
+                    "settings": {
+                        "foreground": "#db0000",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors assignment augmented",
+                    "scope": "keyword.operator.assignment.augmented.python",
+                    "settings": {
+                        "foreground": "#db0000",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors item-acces arguments",
+                    "scope": "meta.item-access.arguments.python",
+                    "settings": {
+                        "foreground": "#db0000",
+                    }
+                },
+                {
+                    "name": "Change colors parameter function",
+                    "scope": "variable.parameter.function.python",
+                    "settings": {
+                        "foreground": "#ff7c24",
+                        //fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors operator arithmetic",
+                    "scope": "keyword.operator.arithmetic.python",
+                    "settings": {
+                        "foreground": "#ff6600",
+                        //fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors function-call",
+                    "scope": "meta.function-call.python",
+                    "settings": {
+                        "foreground": "#83a598",
+                        //fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change font weight self",
+                    "scope": "variable.parameter.function.language.special.self.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change font weight class",
+                    "scope": "storage.type.class.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change font weight function",
+                    "scope": "storage.type.function.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change font weight 'for', 'while' and 'if' ",
+                    "scope": "keyword.control.flow.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change font weight 'def' ",
+                    "scope": "storage.type.function.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change font weight operators ",
+                    "scope": "keyword.operator.logical.python",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors constants (upercase)",
+                    "scope": "variable.other.constant",
+                    "settings": {
+                        "foreground": "#ff7700",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors definided functions",
+                    "scope": "entity.name.function.member",
+                    "settings": {
+                        "foreground": "#B9BB47",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors definided classes",
+                    "scope": "entity.name.type.class",
+                    "settings": {
+                        "foreground": "#99BE83",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors functions",
+                    "scope": "entity.name.function",
+                    "settings": {
+                        "foreground": "#B9BB47",
+                        "fontStyle": "bold"
+                    }
+                },
+            ]
+        }
+    }
+}
