@@ -6,6 +6,7 @@
         }
     ],
     "launch": {
+        
         "configurations": [],
         "compounds": []
     },
@@ -24,9 +25,8 @@
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.fontSize": 15,
     "workbench.activityBar.visible": false,
-    "editor.fontSize": 18,
+    "editor.fontSize": 19.5,
     "latex-workshop.message.update.show": false,
-    "window.zoomLevel": 1,
     "terminal.integrated.inheritEnv": false,
     "editor.tokenColorCustomizations": {
         "[Gruvbox Minor Dark Hard]": {
@@ -63,8 +63,16 @@
                     }
                 },
                 {
-                    "name": "Change colors parameter function",
+                    "name": "Change colors parameter function python",
                     "scope": "variable.parameter.function.python",
+                    "settings": {
+                        "foreground": "#ff7c24",
+                        //fontStyle": "bold"
+                    }
+                },
+                {
+                    "name": "Change colors parameter function ",
+                    "scope": "variable.parameter",
                     "settings": {
                         "foreground": "#ff7c24",
                         //fontStyle": "bold"
@@ -162,5 +170,5 @@
                 },
             ]
         }
-    }
+    },
 }
